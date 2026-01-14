@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldan L.M Gehon | Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#1E40AF',
+                    },
+                    animation: {
+                        blob: "blob 7s infinite",
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": {
+                                transform: "translate(0px, 0px) scale(1)",
+                            },
+                            "33%": {
+                                transform: "translate(30px, -50px) scale(1.1)",
+                            },
+                            "66%": {
+                                transform: "translate(-20px, 20px) scale(0.9)",
+                            },
+                            "100%": {
+                                transform: "translate(0px, 0px) scale(1)",
+                            },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-40 transition-all duration-300 border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="w-8 h-8 bg-gradient-to-br from-primary to-purple-600 text-white rounded-lg flex items-center justify-center font-bold text-xl shadow-md">A</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-slate-600 hover:text-primary transition font-medium hover:bg-blue-50 px-3 py-1 rounded-full">Home</a>
+                    <a href="#about" class="text-slate-600 hover:text-primary transition font-medium hover:bg-blue-50 px-3 py-1 rounded-full">About</a>
+                    <a href="#experience" class="text-slate-600 hover:text-primary transition font-medium hover:bg-blue-50 px-3 py-1 rounded-full">Experience</a>
+                    <a href="#education" class="text-slate-600 hover:text-primary transition font-medium hover:bg-blue-50 px-3 py-1 rounded-full">Education</a>
+                    <a href="#skills" class="text-slate-600 hover:text-primary transition font-medium hover:bg-blue-50 px-3 py-1 rounded-full">Skills</a>
+                    <a href="#certifications" class="text-slate-600 hover:text-primary transition font-medium hover:bg-blue-50 px-3 py-1 rounded-full">Certifications</a>
+                    <a href="#projects" class="text-slate-600 hover:text-primary transition font-medium hover:bg-blue-50 px-3 py-1 rounded-full">Projects</a>
+                    <a href="#contact" class="bg-gradient-to-r from-primary to-blue-600 text-white px-5 py-2 rounded-full hover:shadow-lg hover:scale-105 transition transform font-medium shadow-md">Contact Me</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-blue-50 rounded-md font-medium">Home</a>
+                <a href="#about" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-blue-50 rounded-md font-medium">About</a>
+                <a href="#experience" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-blue-50 rounded-md font-medium">Experience</a>
+                <a href="#education" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-blue-50 rounded-md font-medium">Education</a>
+                <a href="#skills" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-blue-50 rounded-md font-medium">Skills</a>
+                <a href="#certifications" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-blue-50 rounded-md font-medium">Certifications</a>
+                <a href="#projects" class="block px-3 py-3 text-slate-600 hover:text-primary hover:bg-blue-50 rounded-md font-medium">Projects</a>
+                <a href="#contact" class="block px-3 py-3 text-primary font-bold hover:bg-blue-50 rounded-md">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-28 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-white">
+        <!-- Decorative Background Blobs -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex flex-col items-center justify-center text-center">
+                
+                <!-- Hero Text -->
+                <div class="max-w-3xl">
+                    <div class="inline-block px-4 py-1.5 bg-white/50 backdrop-blur-sm text-primary font-semibold rounded-full text-sm mb-6 border border-blue-100 shadow-sm">
+                        Available for freelance work
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+                        Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Aldan L.M Gehon</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
+                        A passionate developer dedicated to building clean, modern, and impactful digital experiences.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#contact" class="px-8 py-3.5 bg-gradient-to-r from-primary to-blue-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                            Let's Talk
+                        </a>
+                        <a href="#projects" class="px-8 py-3.5 bg-white text-slate-700 border border-slate-200 rounded-lg font-semibold hover:bg-slate-50 hover:border-slate-300 shadow-sm hover:shadow transition-all duration-300">
+                            View Work
+                        </a>
+                        <a href="https://docs.google.com/document/d/1Cw8EbtgJAX7cv2E7ZQ8KMeo5SG_8AzGL/edit" target="_blank" class="px-8 py-3.5 bg-slate-800 text-white rounded-lg font-semibold hover:bg-slate-900 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 border border-slate-800 flex items-center justify-center">
+                            Touch Resume <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-10 flex items-center justify-center gap-6 text-slate-400">
+                        <a href="https://github.com/Aldan05" target="_blank" class="hover:text-primary transition-colors text-2xl hover:scale-110 transform duration-200"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/aldan-l-m-gehon-bb0b513a5/" target="_blank" class="hover:text-primary transition-colors text-2xl hover:scale-110 transform duration-200"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-primary transition-colors text-2xl hover:scale-110 transform duration-200"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-primary transition-colors text-2xl hover:scale-110 transform duration-200"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">About Me</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl h-80 bg-slate-100 group ring-4 ring-white">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Workspace" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                         <p class="text-white font-medium text-lg">Coding is not just typing; it's thinking.</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-slate-800">Developing with passion & precision</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        I am a dedicated professional with a strong foundation in web development. I love turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you can find me exploring new technologies or enjoying a good book.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-6 bg-blue-50/50 rounded-xl border border-blue-100 hover:shadow-md transition duration-300">
+                            <h4 class="font-bold text-3xl text-primary mb-1">1</h4>
+                            <p class="text-sm text-slate-600 font-medium">Month Experience</p>
+                        </div>
+                        <div class="p-6 bg-purple-50/50 rounded-xl border border-purple-100 hover:shadow-md transition duration-300">
+                            <h4 class="font-bold text-3xl text-purple-600 mb-1">3</h4>
+                            <p class="text-sm text-slate-600 font-medium">Projects Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-b from-white to-blue-50/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Experience</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Timeline Item -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 relative overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-primary to-purple-500"></div>
+                    
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Mobile App Developer Intern</h3>
+                            <p class="text-primary font-medium">Tech Solutions Inc.</p>
+                        </div>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold border border-blue-100">
+                            <i class="far fa-calendar-alt mr-1"></i> Jun 25, 2025 - Jul 21, 2025 (27 Days)
+                        </span>
+                    </div>
+                    
+                    <p class="text-slate-600 mb-5 leading-relaxed">
+                        Collaborated with senior developers to design and implement new features for cross-platform mobile applications. Optimized app performance and fixed bugs to ensure high-quality user experiences.
+                    </p>
+
+                    <!-- Detailed Description -->
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-100">
+                        <h4 class="font-semibold text-slate-800 mb-3 flex items-center">
+                            <i class="fas fa-star text-yellow-400 mr-2"></i> Key Responsibilities & Achievements
+                        </h4>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2 text-sm ml-2 marker:text-primary">
+                            <li>Gained hands-on experience with <strong>Flutter and Dart</strong> for cross-platform development.</li>
+                            <li>Developed reusable components improving development speed by 20%.</li>
+                            <li>Integrated RESTful APIs and managed state for seamless data flow.</li>
+                            <li>Participated in daily stand-ups and code reviews, adhering to Agile methodologies.</li>
+                            <li>Successfully completed internship program with distinction.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <p class="text-sm font-medium text-slate-500">
+                                <i class="fas fa-certificate text-purple-500 mr-2"></i>
+                                Certificate ID: <span class="text-slate-800 font-mono font-bold bg-white px-2 py-0.5 rounded border border-slate-200 select-all">927623BAD005</span>
+                            </p>
+                            <a href="https://docs.google.com/document/d/13GkT7wsyXzb7Eo0VO9XxoDYn4iTU1uKF/edit" target="_blank" class="inline-flex items-center text-primary font-semibold hover:text-blue-700 transition-colors text-sm">
+                                View Certificate <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Education</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- College -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 relative overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-primary to-purple-500"></div>
+                    
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">B.Tech in Artificial Intelligence and Data Science</h3>
+                            <p class="text-primary font-medium">M. Kumarasamy College of Engineering</p>
+                        </div>
+                        <span class="px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm font-semibold border border-purple-100">
+                            <i class="fas fa-graduation-cap mr-1"></i> Student
+                        </span>
+                    </div>
+                    
+                    <p class="text-slate-600">
+                        Focusing on core AI concepts, machine learning algorithms, deep learning, and data analytics to solve complex real-world problems.
+                    </p>
+                </div>
+
+                <!-- School (New) -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 relative overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-400 to-cyan-500"></div>
+                    
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Higher Secondary Education</h3>
+                            <p class="text-primary font-medium">Carmel Jothi Metric Hr Sec School</p>
+                        </div>
+                        <span class="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-semibold border border-green-100">
+                            <i class="fas fa-check-circle mr-1"></i> Completed
+                        </span>
+                    </div>
+                    
+                    <p class="text-slate-600">
+                        Completed higher secondary education with a strong foundation in mathematics and computer science.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">My Skills</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <!-- Skill Card Template -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-orange-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-orange-50 text-orange-500 rounded-2xl rotate-3 group-hover:rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-html5 text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">HTML5</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-blue-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-2xl -rotate-3 group-hover:-rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-css3-alt text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">CSS3</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-yellow-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-yellow-50 text-yellow-500 rounded-2xl rotate-3 group-hover:rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-js text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">JavaScript</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-cyan-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-cyan-50 text-cyan-500 rounded-2xl -rotate-3 group-hover:-rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-react text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">React</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-green-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-green-50 text-green-600 rounded-2xl rotate-3 group-hover:rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-node-js text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">Node.js</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-red-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-red-50 text-red-500 rounded-2xl -rotate-3 group-hover:-rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-git-alt text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">Git</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-purple-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-purple-50 text-purple-500 rounded-2xl rotate-3 group-hover:rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-figma text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">Figma</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-blue-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl -rotate-3 group-hover:-rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-python text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">Python</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-gray-200 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-gray-50 text-gray-600 rounded-2xl rotate-3 group-hover:rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fas fa-database text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">SQL</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-green-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-green-50 text-green-500 rounded-2xl -rotate-3 group-hover:-rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fas fa-leaf text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">MongoDB</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-blue-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-400 rounded-2xl rotate-3 group-hover:rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-docker text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">Docker</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-blue-200 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl -rotate-3 group-hover:-rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fas fa-code text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">TypeScript</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-orange-100 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-orange-50 text-orange-400 rounded-2xl rotate-3 group-hover:rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-aws text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">AWS</h3>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 text-center group border border-slate-100 hover:border-gray-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-gray-50 text-gray-800 rounded-2xl -rotate-3 group-hover:-rotate-6 flex items-center justify-center mx-auto mb-4 transition duration-300">
+                        <i class="fab fa-linux text-3xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-slate-900">Linux</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">Certifications</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Certificate 1: IBM -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Predictive Modelling Fundamentals</h3>
+                    <p class="text-slate-500 font-medium mb-4">IBM</p>
+                    <a href="https://docs.google.com/document/d/10ad7TeHVeGoTCAHD1hjOx1v4Fb8KkTpa/edit" target="_blank" class="inline-flex items-center text-primary font-semibold hover:text-blue-700 transition-colors">
+                        View Certificate <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Certificate 2: SWAYAM -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">IoT 4.0</h3>
+                    <p class="text-slate-500 font-medium mb-4">SWAYAM</p>
+                    <a href="https://docs.google.com/document/d/1auVd7DBF7-p0j6Hsrp1UyxqSPHYzoMFr/edit" target="_blank" class="inline-flex items-center text-primary font-semibold hover:text-blue-700 transition-colors">
+                        View Certificate <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Certificate 3: Microsoft -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-microsoft"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Power BI</h3>
+                    <p class="text-slate-500 font-medium mb-4">Microsoft</p>
+                    <a href="https://docs.google.com/document/d/1wzpWf3fGlBk3gy2EM2abOWpJfhMZInve/edit" target="_blank" class="inline-flex items-center text-primary font-semibold hover:text-blue-700 transition-colors">
+                        View Certificate <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gradient-to-tl from-white via-purple-50/20 to-blue-50/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl">My Projects</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: AI Driven Wearable Help System -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI Wearable Tech" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">AI Driven Wearable Help System</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                            An intelligent support system designed for wearable devices. It utilizes machine learning algorithms to predict user needs and provide contextual assistance in real-time, enhancing the user experience on small screens.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full border border-blue-100">AI/ML</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-semibold rounded-full border border-purple-100">Python</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-600 text-xs font-semibold rounded-full border border-green-100">IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Task Management System -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Task Management Dashboard" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">Task Management System</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                            A comprehensive web application for organizing personal and team tasks. Features include drag-and-drop Kanban boards, real-time collaboration updates, and detailed productivity analytics.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-cyan-50 text-cyan-600 text-xs font-semibold rounded-full border border-cyan-100">React</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-600 text-xs font-semibold rounded-full border border-green-100">Node.js</span>
+                            <span class="px-3 py-1 bg-gray-50 text-gray-600 text-xs font-semibold rounded-full border border-gray-100">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Movie Rating Analysis Using Spark -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Movie Analysis Data" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">Movie Rating Analysis</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                            A big data project processing millions of movie ratings. Utilizing Apache Spark to uncover trends, user preferences, and genre popularity over time, visualizing insights through interactive charts.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-full border border-orange-100">Apache Spark</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-semibold rounded-full border border-blue-100">Big Data</span>
+                            <span class="px-3 py-1 bg-yellow-50 text-yellow-600 text-xs font-semibold rounded-full border border-yellow-100">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-b from-white to-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl shadow-2xl overflow-hidden relative">
+                <!-- Decorative Circle -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                
+                <div class="p-8 md:p-12 relative z-10">
+                    <h2 class="text-3xl font-bold text-white mb-10 text-center">Get In Touch</h2>
+                    
+                    <div class="flex flex-wrap justify-center gap-8 md:gap-12 text-center">
+                        <!-- Email -->
+                        <div class="flex flex-col items-center group w-full sm:w-auto">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">Email</h3>
+                            <a href="mailto:aldanaldan837@gmail.com" class="text-slate-400 hover:text-white transition text-sm break-all">
+                                aldanaldan837@gmail.com
+                            </a>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex flex-col items-center group w-full sm:w-auto">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">Location</h3>
+                            <span class="text-slate-400 text-sm">
+                                Colachel, Kanniyakumari
+                            </span>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex flex-col items-center group w-full sm:w-auto">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">Phone</h3>
+                            <a href="tel:7402196243" class="text-slate-400 hover:text-white transition text-sm">
+                                7402196243
+                            </a>
+                        </div>
+
+                        <!-- LinkedIn (New) -->
+                        <div class="flex flex-col items-center group w-full sm:w-auto">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/aldan-l-m-gehon-bb0b513a5/" target="_blank" class="text-slate-400 hover:text-white transition text-sm flex items-center gap-1">
+                                Connect <i class="fas fa-external-link-alt text-xs"></i>
+                            </a>
+                        </div>
+
+                        <!-- GitHub (New) -->
+                        <div class="flex flex-col items-center group w-full sm:w-auto">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">GitHub</h3>
+                            <a href="https://github.com/Aldan05" target="_blank" class="text-slate-400 hover:text-white transition text-sm flex items-center gap-1">
+                                View Profile <i class="fas fa-external-link-alt text-xs"></i>
+                            </a>
+                        </div>
+
+                        <!-- Resume (New) -->
+                        <div class="flex flex-col items-center group w-full sm:w-auto">
+                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center text-white mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-file-lines text-xl"></i>
+                            </div>
+                            <h3 class="text-white font-semibold mb-2">Resume</h3>
+                            <a href="https://docs.google.com/document/d/1Cw8EbtgJAX7cv2E7ZQ8KMeo5SG_8AzGL/edit" target="_blank" class="text-slate-400 hover:text-white transition text-sm flex items-center gap-1">
+                                Open Resume <i class="fas fa-external-link-alt text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Logic
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('hidden');
+                });
+            }
+
+            // Close menu when clicking a link
+            const menuLinks = document.querySelectorAll('#mobile-menu a');
+            if (menuLinks) {
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (menu) menu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // AI Widget Logic
+            const aiBtn = document.getElementById('ai-toggle-btn');
+            const aiWindow = document.getElementById('ai-chat-window');
+            const closeAiBtn = document.getElementById('close-ai-btn');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInput = document.getElementById('chat-input');
+            const sendBtn = document.getElementById('chat-send-btn');
+
+            // Knowledge Base - Structured Data
+            const knowledgeBase = {
+                projects: {
+                    keywords: ['project', 'work', 'built', 'portfolio', 'app', 'system'],
+                    response: "I've worked on several impactful projects:<br><br><strong>1. Traffic Flow Prediction (IoT):</strong> ML-based congestion forecasting.<br><strong>2. Animal Shelter System:</strong> Full-stack management platform.<br><strong>3. Fire Disaster Management:</strong> Real-time resource tracking.<br><br>Which one interests you?"
+                },
+                skills: {
+                    keywords: ['skill', 'stack', 'tech', 'language', 'tool', 'program'],
+                    response: "My technical expertise includes:<br>• <strong>Languages:</strong> Python, Java, R, Dart<br>• <strong>Web:</strong> React, Node.js, HTML/CSS<br>• <strong>AI/ML:</strong> TensorFlow, Scikit-learn<br>• <strong>Tools:</strong> Docker, AWS, Git, Figma"
+                },
+                contact: {
+                    keywords: ['contact', 'email', 'hire', 'reach', 'call', 'touch'],
+                    response: "I'd love to connect! You can reach me at <a href='mailto:aldanaldan837@gmail.com' class='text-primary underline'>aldanaldan837@gmail.com</a> or call me at 7402196243. I'm available for freelance work!"
+                },
+                experience: {
+                    keywords: ['experience', 'intern', 'company', 'job'],
+                    response: "I recently completed a Mobile App Developer internship at Tech Solutions Inc. (June-July 2025), where I utilized Flutter and React Native to build performant cross-platform applications."
+                },
+                greeting: {
+                    keywords: ['hi', 'hello', 'hey', 'greetings', 'yo'],
+                    response: "Hello there! 👋 I'm here to answer questions about Aldan's portfolio, skills, and projects. How can I help you today?"
+                },
+                default: {
+                    response: "That's a great question! I focus on building clean, efficient, and user-friendly solutions. For specific technical doubts or complex queries, please feel free to email me directly. I'm always happy to help!"
+                }
+            };
+
+            if (aiBtn && aiWindow && closeAiBtn) {
+                function toggleChat() {
+                    aiWindow.classList.toggle('hidden');
+                    if (!aiWindow.classList.contains('hidden')) {
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }
+                }
+                aiBtn.addEventListener('click', toggleChat);
+                closeAiBtn.addEventListener('click', toggleChat);
+
+                function addMessage(text, isUser = false) {
+                    const msgDiv = document.createElement('div');
+                    msgDiv.className = `flex gap-3 mb-4 ${isUser ? 'flex-row-reverse' : ''}`;
+                    
+                    const avatar = isUser 
+                        ? `<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center flex-shrink-0 text-slate-600"><i class="fas fa-user text-sm"></i></div>`
+                        : `<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary"><i class="fas fa-robot text-sm"></i></div>`;
+                    
+                    const bubble = `<div class="${isUser ? 'bg-primary text-white rounded-tr-none' : 'bg-white rounded-tl-none border border-slate-100 text-slate-600'} p-3 rounded-2xl shadow-sm text-sm">
+                        ${text}
+                    </div>`;
+
+                    msgDiv.innerHTML = isUser ? bubble + avatar : avatar + bubble;
+                    chatMessages.appendChild(msgDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }
+
+                function getResponse(text) {
+                    const lowerText = text.toLowerCase();
+                    
+                    // Iterate through knowledge base categories
+                    for (const category in knowledgeBase) {
+                        if (category === 'default') continue;
+                        
+                        const data = knowledgeBase[category];
+                        if (data.keywords.some(keyword => lowerText.includes(keyword))) {
+                            return data.response;
+                        }
+                    }
+                    return knowledgeBase.default.response;
+                }
+
+                function handleUserMessage() {
+                    const text = chatInput.value.trim();
+                    if (!text) return;
+
+                    addMessage(text, true);
+                    chatInput.value = '';
+
+                    const response = getResponse(text);
+                    addMessage(response, false);
+                }
+
+                sendBtn.addEventListener('click', handleUserMessage);
+                chatInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') handleUserMessage();
+                });
+            }
+        });
+    </script>
+
+    <!-- AI Assist Widget (Floating) -->
+    <div id="ai-widget" class="fixed bottom-6 right-6 z-50">
+        <!-- Chat Window (Hidden by default) -->
+        <div id="ai-chat-window" class="hidden mb-4 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform transition-all duration-300 origin-bottom-right flex flex-col max-h-[500px]">
+            <div class="bg-slate-900 p-4 flex justify-between items-center flex-shrink-0">
+                <h3 class="text-white font-bold flex items-center gap-2"><i class="fas fa-robot text-primary"></i> AI Assistant</h3>
+                <button id="close-ai-btn" class="text-slate-400 hover:text-white transition"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <!-- Chat Messages Area -->
+            <div id="chat-messages" class="p-4 flex-1 bg-slate-50 overflow-y-auto">
+                <!-- Initial Greeting -->
+                <div class="flex gap-3 mb-4">
+                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary"><i class="fas fa-robot text-sm"></i></div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 text-sm text-slate-600">
+                        Hello! I'm Aldan's AI Assistant. 👋<br>
+                        I'm here to answer any questions you have about my projects, skills, or experience. How can I help you today?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-3 bg-white border-t border-slate-100 flex gap-2 flex-shrink-0">
+                <input id="chat-input" type="text" placeholder="Type a message..." class="flex-1 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-primary">
+                <button id="chat-send-btn" class="w-9 h-9 bg-primary text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition"><i class="fas fa-paper-plane text-xs"></i></button>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button id="ai-toggle-btn" class="w-14 h-14 bg-gradient-to-r from-primary to-purple-600 text-white rounded-full shadow-lg hover:shadow-primary/50 flex items-center justify-center text-2xl transition-transform hover:scale-110 active:scale-95 animate-bounce">
+            <i class="fas fa-robot"></i>
+        </button>
+    </div>
+</body>
+</html>
