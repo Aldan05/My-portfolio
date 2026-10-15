@@ -1,0 +1,10 @@
+# Duplicate nested directory from extraction
+My-portfolio-main/
+
+# Office/Word temporary lock files
+~$*
+
+# OS metadata
+.DS_Store
+Thumbs.db
+*.tmp
